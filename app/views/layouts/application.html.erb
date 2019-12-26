@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Новости</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <p class="">Медузззка</p>
+          </a>
+
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+
+            <a class="navbar-item">
+              Documentation
+            </a>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <%= link_to 'Sign up', class: "button is-primary", new_user_registration_path %>
+                <% if current_user %>
+                  <%= link_to 'Sign out', class: "button is-primary", destroy_user_session_path %>
+                <% else %>
+                  <%= link_to 'Login', class: "button is-light", new_user_session_path %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
