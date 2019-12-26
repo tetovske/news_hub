@@ -4,9 +4,8 @@
     <title>Новости</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -38,11 +37,11 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <%= link_to 'Sign up', class: "button is-primary", new_user_registration_path %>
+                <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
                 <% if current_user %>
-                  <%= link_to 'Sign out', class: "button is-primary", destroy_user_session_path %>
+                  <%= link_to 'Sign out', destroy_user_session_url, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% else %>
-                  <%= link_to 'Login', class: "button is-light", new_user_session_path %>
+                  <%= link_to 'Login', new_user_session_path, class: "button is-light" %>
                 <% end %>
               </div>
             </div>

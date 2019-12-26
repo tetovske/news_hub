@@ -1,5 +1,25 @@
 <div class="container">
   <%= render 'layouts/devise_notifications.html.erb' %>
   <%= link_to 'обновить', refresh_path, remote: true %>
-  <p>Hello</p>
+  <% @news.each do |news| %>
+    <%= link_to news.url do %>
+      <div class="card news-card">
+        <div class="card-content">
+          <p class="title">
+            <%= news.title %>
+          </p>
+          <p class="subtitle">
+            <%= news.description %>
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              <%= link_to 'Читать в источнике', news.url %>
+            </span>
+          </p>
+        </footer>
+      </div>
+    <% end %>
+  <% end %>
 </div>
