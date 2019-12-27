@@ -49,9 +49,13 @@ gem 'dry-container'
 gem 'dry-auto_inject'
 
 gem 'interactor'
+
 gem 'httparty'
 
 gem 'rails-i18n', '~> 6.0.0'
+
+gem 'money'
+gem 'eu_central_bank'
 
 gem 'news-api'
 
