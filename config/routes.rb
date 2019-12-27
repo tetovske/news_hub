@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     root 'page#home'
     get '/home' => 'page#home', :as => 'home'
     get '/account' => 'page#account', :as => 'account'
+    get '/update_pref' => 'user#update_preferences', :as => 'update_pref'
   end
 end

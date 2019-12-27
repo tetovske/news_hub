@@ -17,3 +17,5 @@ us:
       technology: 'Technology'
     since: 'since '
     preffered_news: 'Preffered news'
+    submit: 'Update preferences'
+    result_sub: 'Preferences successfully updated!'
