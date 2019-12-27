@@ -1,0 +1,28 @@
+<div class="container news-content">
+  <div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-3"><%= current_user.get_username %></p>
+        <p class="subtitle is-6"><%= current_user.email %></p>
+        <p class="subtitle is-6"><%= t 'account_page.since' %><%= current_user.created_at %></p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="title"><%= t 'account_page.preffered_news' %></div>
+      <div class="select">
+        <select>
+          <option value="business"><%= t 'account_page.news_type.business' %></option>
+          <option value="health"><%= t 'account_page.news_type.health' %></option>
+          <option value="entertainment"><%= t 'account_page.news_type.entertainment' %></option>
+          <option value="general"><%= t 'account_page.news_type.general' %></option>
+          <option value="science"><%= t 'account_page.news_type.science' %></option>
+          <option value="sports"><%= t 'account_page.news_type.sports' %></option>
+          <option value="technology"><%= t 'account_page.news_type.technology' %></option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

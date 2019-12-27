@@ -13,7 +13,7 @@
     <nav class="navbar news-header" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
+          <a class="navbar-item" href="/">
             <div class="logo">
               <div class="pre-name">News</div>
               <div class="after-name">Hub</div>
@@ -30,7 +30,7 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
             <%= link_to t('main_page.home_link'), home_path, class: "navbar-item nav-button" %>
-            <%= link_to t('main_page.setting'), home_path, class: "navbar-item nav-button" %>
+            <%= link_to t('main_page.setting'), account_path, class: "navbar-item nav-button" %>
           </div>
 
           <div class="navbar-end">

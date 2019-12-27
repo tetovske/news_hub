@@ -6,3 +6,14 @@ us:
     home_link: 'Home'
     setting: 'My account'
     source: 'Look at the source'
+  account_page:
+    news_type:
+      business: 'Business'
+      health: 'Health'
+      entertainment: 'Entertainment'
+      general: 'General'
+      science: 'Science'
+      sports: 'Sports'
+      technology: 'Technology'
+    since: 'since '
+    preffered_news: 'Preffered news'

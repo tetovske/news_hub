@@ -3,13 +3,11 @@ require 'news-api'
 class NewsApiHelper
   include Interactor
 
-  before :get_news
-
   API_KEY = "ab58366680454fb0b5600af0a6f9f564"
 
-  def get_news
+  def call
     init_api
-    context.res = get_headers(context.lang, context.country)
+    context.res = get_headers(context.country, context.category)
   end
 
   private 
@@ -18,7 +16,7 @@ class NewsApiHelper
     @api = News.new(API_KEY)
   end
 
-  def get_headers(lang, country)
-    @api.get_top_headlines(language: lang, country: country)
+  def get_headers(country, category)
+    @api.get_top_headlines(country: country, category: category)
   end
 end
