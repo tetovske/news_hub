@@ -6,14 +6,18 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar news-header" role="navigation" aria-label="main navigation">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <p class="">Медузззка</p>
+            <div class="logo">
+              <div class="pre-name">News</div>
+              <div class="after-name">Hub</div>
+            </div>
           </a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -25,23 +29,23 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
-              Home
+            <a class="navbar-item nav-button">
+              Домашнее ;)
             </a>
 
-            <a class="navbar-item">
-              Documentation
+            <a class="navbar-item nav-button">
+              Личный кабинет :*
             </a>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <%= link_to 'Sign up', new_user_registration_path, class: "button is-primary" %>
+                <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "button-default" %>
                 <% if current_user %>
-                  <%= link_to 'Sign out', destroy_user_session_url, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Выйти :O', destroy_user_session_url, method: :delete, class: "button-default" %>
                 <% else %>
-                  <%= link_to 'Login', new_user_session_path, class: "button is-light" %>
+                  <%= link_to 'Войти ;)))', new_user_session_path, class: "button-grey" %>
                 <% end %>
               </div>
             </div>

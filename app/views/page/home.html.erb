@@ -1,6 +1,5 @@
-<div class="container">
+<div class="container content">
   <%= render 'layouts/devise_notifications.html.erb' %>
-  <%= link_to 'обновить', refresh_path, remote: true %>
   <% @news.each do |news| %>
     <%= link_to news.url do %>
       <div class="card news-card">
