@@ -15,6 +15,7 @@ class ExchangeRate
   def setup
     @eu_bank = EuCentralBank.new
     Money.default_bank = @eu_bank
+    Money.rounding_mode = BigDecimal::ROUND_HALF_EVEN
     @eu_bank.update_rates
   end
 

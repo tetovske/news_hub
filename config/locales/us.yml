@@ -6,6 +6,7 @@ us:
     home_link: 'Home'
     setting: 'My account'
     source: 'Look at the source'
+    exch: 'Exchange rate'
   account_page:
     news_type:
       business: 'Business'
@@ -19,3 +20,11 @@ us:
     preffered_news: 'Preffered news'
     submit: 'Update preferences'
     result_sub: 'Preferences successfully updated!'
+  auth:
+    login: 'Login'
+    signup: 'Sign up'
+    email: 'Email'
+    password: 'Password'
+    pass_conf: 'Password confirmation'
+    remember: 'Remember me'
+    forgot: 'Forgot your password?'

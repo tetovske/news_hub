@@ -11,5 +11,9 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe UserHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'change preference of user' do
+    it 'should change user preference' do
+      
+    end
+  end
 end

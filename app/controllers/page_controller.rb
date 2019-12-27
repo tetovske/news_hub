@@ -5,9 +5,7 @@ class PageController < ApplicationController
     @news = NewsApiHelper.call(country: I18n.locale, category: get_pref).res
   end
 
-  def account
-
-  end
+  def account; end
 
   private
 

@@ -6,6 +6,7 @@ ru:
     home_link: 'Главная'
     setting: 'Личный кабинет'
     source: 'Смотреть в источнике'
+    exch: 'Курс валют'
   account_page:
     news_type:
       business: 'Бизнес'
@@ -19,3 +20,11 @@ ru:
     preffered_news: 'Предпочтительные новости'
     submit: 'Обновить предпочтения'
     result_sub: 'Предпочтения успешно обновлены!'
+  auth:
+    login: 'Войти'
+    signup: 'Зарегистрироваться'
+    email: 'Почта'
+    password: 'Пароль'
+    pass_conf: 'Подтверждение пароля'
+    remember: 'Запомнить меня'
+    forgot: 'Забыли пароль?'
