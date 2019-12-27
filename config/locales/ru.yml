@@ -1,0 +1,8 @@
+ru:
+  main_page:
+    signup: 'Зарегистрироваться'
+    signin: 'Войти'
+    signout: 'Выйти'
+    home_link: 'Главная'
+    setting: 'Личный кабинет'
+    source: 'Смотреть в источнике'

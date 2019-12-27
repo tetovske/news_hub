@@ -51,6 +51,8 @@ gem 'dry-auto_inject'
 gem 'interactor'
 gem 'httparty'
 
+gem 'rails-i18n', '~> 6.0.0'
+
 gem 'news-api'
 
 group :development, :test do

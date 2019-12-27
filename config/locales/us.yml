@@ -1,0 +1,8 @@
+us:
+  main_page:
+    signup: 'Signup'
+    signin: 'Signin'
+    signout: 'Signout'
+    home_link: 'Home'
+    setting: 'My account'
+    source: 'Look at the source'

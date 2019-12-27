@@ -29,23 +29,24 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item nav-button">
-              Домашнее ;)
-            </a>
-
-            <a class="navbar-item nav-button">
-              Личный кабинет :*
-            </a>
+            <%= link_to t('main_page.home_link'), home_path, class: "navbar-item nav-button" %>
+            <%= link_to t('main_page.setting'), home_path, class: "navbar-item nav-button" %>
           </div>
 
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <%= link_to 'Зарегистрироваться', new_user_registration_path, class: "button-default" %>
+                <button class="button is-rounded is-small"><%= link_to 'EN', locale: :us %></button>
+                <button class="button is-rounded is-small"><%= link_to 'RU', locale: :ru %></button>
+              </div>
+            </div>
+            <div class="navbar-item">
+              <div class="buttons">
+                <%= link_to t('main_page.signup'), new_user_registration_path, class: "button-default" %>
                 <% if current_user %>
-                  <%= link_to 'Выйти :O', destroy_user_session_url, method: :delete, class: "button-default" %>
+                  <%= link_to t('main_page.signout'), destroy_user_session_url, method: :delete, class: "button-default" %>
                 <% else %>
-                  <%= link_to 'Войти ;)))', new_user_session_path, class: "button-grey" %>
+                  <%= link_to t('main_page.signin'), new_user_session_path, class: "button-grey" %>
                 <% end %>
               </div>
             </div>
