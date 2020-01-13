@@ -6765,3 +6765,193 @@ Processing by UserController#update_preferences as JS
 Completed 200 OK in 147ms (Views: 2.1ms | ActiveRecord: 136.8ms | Allocations: 7216)
 
 
+Started GET "/" for ::1 at 2019-12-28 00:03:48 +0300
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 4.9ms | Allocations: 141)
+  Rendered page/home.html.erb within layouts/application (Duration: 640.3ms | Allocations: 8466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2146ms (Views: 1022.2ms | ActiveRecord: 0.0ms | Allocations: 20199)
+
+
+Started GET "/us" for ::1 at 2019-12-28 00:04:22 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 317.7ms | Allocations: 4436)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1336ms (Views: 322.8ms | ActiveRecord: 0.0ms | Allocations: 11156)
+
+
+Started GET "/ru" for ::1 at 2019-12-28 00:04:31 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 328.1ms | Allocations: 4330)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1237ms (Views: 332.3ms | ActiveRecord: 0.0ms | Allocations: 10442)
+
+
+Started GET "/users/sign_up?locale=ru" for ::1 at 2019-12-28 00:04:35 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 25.8ms | Allocations: 216)
+  Rendered devise/shared/_links.html.erb (Duration: 10.2ms | Allocations: 577)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 129.3ms | Allocations: 3595)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 134.7ms | ActiveRecord: 0.6ms | Allocations: 15621)
+
+
+Started GET "/users/sign_in?locale=ru" for ::1 at 2019-12-28 00:04:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 27.6ms | Allocations: 2029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 7961)
+
+
+Started POST "/users/sign_in?locale=ru" for ::1 at 2019-12-28 00:04:57 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"GyiN8fVHCe+Hv5QsHsifwfOKQG5lYImnPBx70o8hkbZEhDX3av0q0qA7PYV2kPK+ewXHIBbvUG6Bb6iaNdvhyQ==", "user"=>{"email"=>"tetovske@yandex.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Войти", "locale"=>"ru"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (15.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-12-27 21:04:57.966770"], ["updated_at", "2019-12-27 21:04:57.967232"], ["id", 1]]
+  [1m[35m (79.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ru
+Completed 302 Found in 370ms (ActiveRecord: 105.2ms | Allocations: 11216)
+
+
+Started GET "/ru" for ::1 at 2019-12-28 00:04:58 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:13:in `get_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered page/home.html.erb within layouts/application (Duration: 311.1ms | Allocations: 4330)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1378ms (Views: 315.3ms | ActiveRecord: 0.1ms | Allocations: 11227)
+
+
+Started GET "/ru/account" for ::1 at 2019-12-28 00:05:03 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 29.5ms | Allocations: 943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.1ms | Allocations: 7232)
+
+
+Started GET "/ru/update_pref?pref=technology&commit=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F" for ::1 at 2019-12-28 00:05:20 +0300
+Processing by UserController#update_preferences as JS
+  Parameters: {"pref"=>"technology", "commit"=>"Обновить предпочтения", "locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "preference" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["preference", "technology"], ["updated_at", "2019-12-27 21:05:20.766086"], ["id", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[35m (143.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  Rendering user/update_preferences.js.erb
+  Rendered user/update_preferences.js.erb (Duration: 13.8ms | Allocations: 141)
+Completed 200 OK in 165ms (Views: 15.4ms | ActiveRecord: 143.6ms | Allocations: 7070)
+
+
+Started GET "/ru/home" for ::1 at 2019-12-28 00:05:23 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:13:in `get_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 330.3ms | Allocations: 4333)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1362ms (Views: 335.2ms | ActiveRecord: 0.1ms | Allocations: 11154)
+
+
+Started GET "/ru/home" for ::1 at 2019-12-28 00:06:08 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:13:in `get_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 571.3ms | Allocations: 4360)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1803ms (Views: 575.3ms | ActiveRecord: 0.1ms | Allocations: 11224)
+
+
+Started GET "/ru/account" for ::1 at 2019-12-28 00:06:37 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 2.2ms | Allocations: 573)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 6687)
+
+
+Started GET "/ru/update_pref?pref=sports&commit=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F" for ::1 at 2019-12-28 00:06:40 +0300
+Processing by UserController#update_preferences as JS
+  Parameters: {"pref"=>"sports", "commit"=>"Обновить предпочтения", "locale"=>"ru"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "preference" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["preference", "sports"], ["updated_at", "2019-12-27 21:06:40.793489"], ["id", 1]]
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  [1m[35m (81.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:4:in `update_preferences'
+  Rendering user/update_preferences.js.erb
+  Rendered user/update_preferences.js.erb (Duration: 0.2ms | Allocations: 22)
+Completed 200 OK in 104ms (Views: 1.4ms | ActiveRecord: 82.6ms | Allocations: 5047)
+
+
+Started GET "/ru/home" for ::1 at 2019-12-28 00:06:43 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:13:in `get_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 318.4ms | Allocations: 4328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1227ms (Views: 333.9ms | ActiveRecord: 2.5ms | Allocations: 11124)
+
+
+Started DELETE "/users/sign_out?locale=ru" for ::1 at 2019-12-28 00:07:04 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1p4sNbStPWEonrMiE5XVA432h7wSKR7v3K4X+qL42HOgucq9DKNM1wPG5BuwWUmcrhZA090AVm3ScFau88SiEQ==", "locale"=>"ru"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-12-27 21:07:04.966906"], ["id", 1]]
+  [1m[35m (133.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ru
+Completed 302 Found in 155ms (ActiveRecord: 134.3ms | Allocations: 7063)
+
+
+Started GET "/ru" for ::1 at 2019-12-28 00:07:05 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 330.7ms | Allocations: 4325)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1211ms (Views: 346.8ms | ActiveRecord: 0.0ms | Allocations: 10588)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/tetovske/.rvm/gems/ruby-2.6.3/bin/rake:23)
