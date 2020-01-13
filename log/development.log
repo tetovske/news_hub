@@ -6955,3 +6955,906 @@ Completed 200 OK in 1211ms (Views: 346.8ms | ActiveRecord: 0.0ms | Allocations: 
 
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from load at /home/tetovske/.rvm/gems/ruby-2.6.3/bin/rake:23)
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/tetovske/.rvm/gems/ruby-2.6.3/bin/rake:23)
+Started GET "/" for 127.0.0.1 at 2020-01-13 19:41:34 +0300
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 7.1ms | Allocations: 141)
+  Rendered page/home.html.erb within layouts/application (Duration: 651.9ms | Allocations: 8547)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2022ms (Views: 1033.8ms | ActiveRecord: 0.0ms | Allocations: 20407)
+
+
+Started GET "/users/sign_in?locale=ru" for 127.0.0.1 at 2020-01-13 19:41:42 +0300
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 12.7ms | Allocations: 694)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 109.0ms | Allocations: 3465)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 117.0ms | ActiveRecord: 0.7ms | Allocations: 15779)
+
+
+Started POST "/users/sign_in?locale=ru" for 127.0.0.1 at 2020-01-13 19:41:49 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"J0TyBeBV9lb9iDhFjYseJFPEik8PU9UaCo7EFdDCroTLcM4z0+cFSFm5mdOAky+jLOlyYAau2FyajlpRMAYjjg==", "user"=>{"email"=>"tetovske@yandex.ru", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Войти", "locale"=>"ru"}
+  [1m[36mUser Load (91.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2020-01-13 16:41:50.152871"], ["updated_at", "2020-01-13 16:41:50.153205"], ["id", 1]]
+  [1m[35m (74.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/ru
+Completed 302 Found in 1198ms (ActiveRecord: 166.0ms | Allocations: 11095)
+
+
+Started GET "/ru" for 127.0.0.1 at 2020-01-13 19:41:50 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered page/home.html.erb within layouts/application (Duration: 302.9ms | Allocations: 4334)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1160ms (Views: 308.1ms | ActiveRecord: 0.2ms | Allocations: 11367)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 19:41:56 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 1.5ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 7249)
+
+
+Started GET "/ru/update_pref?pref=entertainment&commit=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F" for 127.0.0.1 at 2020-01-13 19:41:58 +0300
+Processing by UserController#update_preferences as JS
+  Parameters: {"pref"=>"entertainment", "commit"=>"Обновить предпочтения", "locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "preference" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["preference", "entertainment"], ["updated_at", "2020-01-13 16:41:58.819224"], ["id", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[35m (109.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  Rendering user/update_preferences.js.erb
+  Rendered user/update_preferences.js.erb (Duration: 13.6ms | Allocations: 141)
+Completed 200 OK in 132ms (Views: 15.5ms | ActiveRecord: 109.6ms | Allocations: 7081)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 19:42:03 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 318.4ms | Allocations: 4312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1244ms (Views: 323.2ms | ActiveRecord: 0.1ms | Allocations: 11152)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:42:34 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.6ms | Allocations: 4428)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1317ms (Views: 325.2ms | ActiveRecord: 0.1ms | Allocations: 11892)
+
+
+Started GET "/us/account" for 127.0.0.1 at 2020-01-13 19:42:37 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"us"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 0.9ms | Allocations: 558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 6819)
+
+
+Started GET "/us/home" for 127.0.0.1 at 2020-01-13 19:42:38 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 311.9ms | Allocations: 4312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1198ms (Views: 316.8ms | ActiveRecord: 0.1ms | Allocations: 11177)
+
+
+Started DELETE "/users/sign_out?locale=us" for 127.0.0.1 at 2020-01-13 19:42:59 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tiwV4VS3gei/OWAV0rELWy1P4U6OmgYWtNaB10sjgSV+wJw9mc21iW6ppX/YN4KkrKGnE+xRWpUwoJPELkWyMQ==", "locale"=>"us"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2020-01-13 16:42:59.360306"], ["id", 1]]
+  [1m[35m (124.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/us
+Completed 302 Found in 132ms (ActiveRecord: 124.5ms | Allocations: 7167)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:42:59 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 326.6ms | Allocations: 4354)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1166ms (Views: 332.2ms | ActiveRecord: 0.0ms | Allocations: 10660)
+
+
+Started GET "/users/sign_up?locale=us" for 127.0.0.1 at 2020-01-13 19:43:07 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 37.9ms | Allocations: 215)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 152)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 61.3ms | Allocations: 2227)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms | Allocations: 8350)
+
+
+Started GET "/users/sign_in?locale=us" for 127.0.0.1 at 2020-01-13 19:43:10 +0300
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 6821)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 19:44:36 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 332.0ms | Allocations: 4324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1213ms (Views: 336.5ms | ActiveRecord: 0.0ms | Allocations: 10513)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:44:43 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 317.9ms | Allocations: 4314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1259ms (Views: 322.8ms | ActiveRecord: 0.0ms | Allocations: 10460)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:49:37 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 426.3ms | Allocations: 4876)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1146ms (Views: 432.1ms | ActiveRecord: 0.0ms | Allocations: 12252)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:52:08 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 324.0ms | Allocations: 4962)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1271ms (Views: 330.3ms | ActiveRecord: 0.0ms | Allocations: 13187)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:52:19 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+Completed 500 Internal Server Error in 808ms (ActiveRecord: 0.0ms | Allocations: 1935)
+
+
+  
+UnauthorizedException (UnauthorizedException):
+  
+app/interactors/news_api_helper.rb:22:in `get_headers'
+app/interactors/news_api_helper.rb:12:in `call'
+app/controllers/page_controller.rb:7:in `home'
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:52:24 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 318.4ms | Allocations: 4408)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1253ms (Views: 323.2ms | ActiveRecord: 0.0ms | Allocations: 11619)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:52:39 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 305.9ms | Allocations: 4318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1055ms (Views: 310.0ms | ActiveRecord: 0.0ms | Allocations: 10466)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:56:02 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 390.0ms | Allocations: 4873)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2140ms (Views: 1144.8ms | ActiveRecord: 0.0ms | Allocations: 114013)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:57:06 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 316.1ms | Allocations: 4880)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1246ms (Views: 322.0ms | ActiveRecord: 0.0ms | Allocations: 12302)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:57:34 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 310.9ms | Allocations: 4879)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1190ms (Views: 317.0ms | ActiveRecord: 0.0ms | Allocations: 12247)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 19:59:23 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 317.9ms | Allocations: 4872)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1375ms (Views: 323.7ms | ActiveRecord: 0.0ms | Allocations: 12293)
+
+
+Started GET "/users/sign_up?locale=us" for 127.0.0.1 at 2020-01-13 19:59:27 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 206)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 524)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2520)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 11.7ms | ActiveRecord: 0.5ms | Allocations: 14316)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:02:45 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 387.9ms | Allocations: 4874)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1242ms (Views: 394.6ms | ActiveRecord: 0.0ms | Allocations: 12252)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:03:05 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 311.6ms | Allocations: 4872)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1213ms (Views: 317.3ms | ActiveRecord: 0.0ms | Allocations: 12293)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:03:17 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 327.6ms | Allocations: 4873)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1387ms (Views: 337.3ms | ActiveRecord: 0.0ms | Allocations: 12289)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:07:29 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 366.6ms | Allocations: 4321)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2053ms (Views: 1050.0ms | ActiveRecord: 0.0ms | Allocations: 107756)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:08:51 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 410.7ms | Allocations: 4313)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2003ms (Views: 914.7ms | ActiveRecord: 0.0ms | Allocations: 106842)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:11:09 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 309.7ms | Allocations: 4875)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1084ms (Views: 315.4ms | ActiveRecord: 0.0ms | Allocations: 12308)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:16:51 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 325.4ms | Allocations: 4316)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1990ms (Views: 899.8ms | ActiveRecord: 0.0ms | Allocations: 107731)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:17:39 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.4ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1969ms (Views: 997.7ms | ActiveRecord: 0.0ms | Allocations: 107753)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:17:49 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 326.4ms | Allocations: 4314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2352ms (Views: 906.9ms | ActiveRecord: 0.0ms | Allocations: 106948)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:18:19 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 323.5ms | Allocations: 4318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1573ms (Views: 781.2ms | ActiveRecord: 0.0ms | Allocations: 107747)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:18:35 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 316.6ms | Allocations: 4317)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2187ms (Views: 836.7ms | ActiveRecord: 0.0ms | Allocations: 108204)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:20:27 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 334.4ms | Allocations: 4314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2243ms (Views: 764.5ms | ActiveRecord: 0.0ms | Allocations: 108142)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:21:02 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 366.8ms | Allocations: 4318)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1779ms (Views: 803.4ms | ActiveRecord: 0.0ms | Allocations: 107300)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:24:03 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 406.0ms | Allocations: 4312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1571ms (Views: 853.6ms | ActiveRecord: 0.0ms | Allocations: 106867)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:24:10 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 314.5ms | Allocations: 4312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1421ms (Views: 753.3ms | ActiveRecord: 0.0ms | Allocations: 107340)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:24:30 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 355.0ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2244ms (Views: 832.1ms | ActiveRecord: 0.0ms | Allocations: 106493)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:24:43 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 372.4ms | Allocations: 4317)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1507ms (Views: 789.7ms | ActiveRecord: 0.0ms | Allocations: 106968)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:25:56 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 362.6ms | Allocations: 4313)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1731ms (Views: 801.0ms | ActiveRecord: 0.0ms | Allocations: 106495)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:26:05 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.1ms | Allocations: 4312)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1643ms (Views: 748.8ms | ActiveRecord: 0.0ms | Allocations: 107791)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:26:32 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 326.6ms | Allocations: 4881)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1828ms (Views: 332.9ms | ActiveRecord: 0.0ms | Allocations: 12313)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:26:51 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 314.9ms | Allocations: 4319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1589ms (Views: 786.1ms | ActiveRecord: 0.0ms | Allocations: 108160)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:27:13 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 340.7ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1529ms (Views: 772.9ms | ActiveRecord: 0.0ms | Allocations: 107389)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:27:56 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 317.6ms | Allocations: 4319)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1447ms (Views: 750.5ms | ActiveRecord: 0.0ms | Allocations: 108228)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:28:08 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 318.7ms | Allocations: 4315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1520ms (Views: 799.2ms | ActiveRecord: 0.0ms | Allocations: 108173)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:29:49 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 10340.1ms | Allocations: 4900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11423ms (Views: 10346.9ms | ActiveRecord: 0.0ms | Allocations: 12281)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:30:52 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 317.1ms | Allocations: 4869)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1110ms (Views: 323.9ms | ActiveRecord: 0.0ms | Allocations: 12595)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:31:33 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 311.7ms | Allocations: 4873)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 989ms (Views: 317.3ms | ActiveRecord: 0.0ms | Allocations: 12301)
+
+
+Started GET "/us" for 127.0.0.1 at 2020-01-13 20:32:02 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"us"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.0ms | Allocations: 4874)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1310ms (Views: 325.4ms | ActiveRecord: 0.0ms | Allocations: 12318)
+
+
+Started GET "/ru" for 127.0.0.1 at 2020-01-13 20:32:37 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.2ms | Allocations: 4438)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1753ms (Views: 324.7ms | ActiveRecord: 0.0ms | Allocations: 11155)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:35:05 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 335)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:35:05 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 606)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2248)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 8448)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:35:21 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered page/home.html.erb within layouts/application (Duration: 410.4ms | Allocations: 4332)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1135ms (Views: 415.9ms | ActiveRecord: 0.0ms | Allocations: 10500)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:35:32 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:35:32 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 6376)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:35:33 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 315.2ms | Allocations: 4329)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 979ms (Views: 320.6ms | ActiveRecord: 0.0ms | Allocations: 10495)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:35:36 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 378.0ms | Allocations: 4324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1025ms (Views: 384.6ms | ActiveRecord: 0.0ms | Allocations: 10461)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:37:39 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 321.0ms | Allocations: 4324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1852ms (Views: 805.0ms | ActiveRecord: 0.0ms | Allocations: 107665)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:38:33 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 309.2ms | Allocations: 4324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1379ms (Views: 736.1ms | ActiveRecord: 0.0ms | Allocations: 107395)
+
+
+Started GET "/ru/home" for 127.0.0.1 at 2020-01-13 20:38:43 +0300
+Processing by PageController#home as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 305.8ms | Allocations: 4322)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1939ms (Views: 736.5ms | ActiveRecord: 0.0ms | Allocations: 107327)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:38:58 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:38:58 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 182)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 6374)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:39:00 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 314.9ms | Allocations: 4328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1365ms (Views: 319.4ms | ActiveRecord: 0.0ms | Allocations: 10483)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:39:04 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 314.9ms | Allocations: 4323)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1160ms (Views: 320.2ms | ActiveRecord: 0.0ms | Allocations: 10463)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:40:40 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 390.7ms | Allocations: 4327)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1549ms (Views: 813.5ms | ActiveRecord: 0.0ms | Allocations: 106500)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:41:04 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.3ms | Allocations: 4324)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1406ms (Views: 765.1ms | ActiveRecord: 0.0ms | Allocations: 107372)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:41:13 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 321.0ms | Allocations: 4327)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2380ms (Views: 325.9ms | ActiveRecord: 0.0ms | Allocations: 10519)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:42:08 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 309.5ms | Allocations: 4325)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1323ms (Views: 313.8ms | ActiveRecord: 0.0ms | Allocations: 10468)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:42:31 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 1333.3ms | Allocations: 4328)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2711ms (Views: 1770.6ms | ActiveRecord: 0.0ms | Allocations: 108223)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:43:06 +0300
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered page/home.html.erb within layouts/application (Duration: 306.6ms | Allocations: 4327)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1515ms (Views: 737.8ms | ActiveRecord: 0.0ms | Allocations: 107322)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:46:35 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:46:35 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 182)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 427ms (Views: 425.7ms | ActiveRecord: 0.0ms | Allocations: 104564)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:46:35 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:46:35 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 182)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1320)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 6394)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2020-01-13 20:46:57 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 594)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2216)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 8922)
+
+
+Started POST "/users/sign_in?locale=ru" for 127.0.0.1 at 2020-01-13 20:47:02 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"DVismb/1aNoRVY6eqUK1XbhY4yTEvBn+wbca3Iy3Map8xyquYkk9MvvDy5CCqnS98irL2uh5AtOeKPeceJvqyw==", "user"=>{"email"=>"tetovske@yandex.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Войти", "locale"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/ru/account
+Completed 302 Found in 144ms (ActiveRecord: 0.2ms | Allocations: 3904)
+
+
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:47:02 +0300
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3009)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 5563)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<User:0x00007fa7803d9788>):
+    3:   <div class="card-content">
+    4:     <div class="media">
+    5:       <div class="media-content">
+    6:         <p class="title is-3"><%= current_user.username %></p>
+    7:         <p class="subtitle is-6"><%= current_user.email %></p>
+    8:         <p class="subtitle is-6"><%= t 'account_page.since' %><%= current_user.created_at %></p>
+    9:       </div>
+  
+app/views/page/account.html.erb:6
+Started GET "/ru/account" for 127.0.0.1 at 2020-01-13 20:47:34 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#account as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering page/account.html.erb within layouts/application
+  Rendered page/account.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 13776)
+
+
+Started GET "/ru/update_pref?pref=business&commit=%D0%9E%D0%B1%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D1%87%D1%82%D0%B5%D0%BD%D0%B8%D1%8F" for 127.0.0.1 at 2020-01-13 20:47:40 +0300
+Processing by UserController#update_preferences as JS
+  Parameters: {"pref"=>"business", "commit"=>"Обновить предпочтения", "locale"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "tetovske@yandex.ru"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "preference" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["preference", "business"], ["updated_at", "2020-01-13 17:47:40.006838"], ["id", 1]]
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  [1m[35m (165.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/user_controller.rb:5:in `update_preferences'
+  Rendering user/update_preferences.js.erb
+  Rendered user/update_preferences.js.erb (Duration: 0.3ms | Allocations: 135)
+Completed 200 OK in 176ms (Views: 1.9ms | ActiveRecord: 166.4ms | Allocations: 7077)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:47:43 +0300
+Processing by PageController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.3ms | Allocations: 133)
+  Rendered page/home.html.erb within layouts/application (Duration: 319.5ms | Allocations: 4963)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1990ms (Views: 324.5ms | ActiveRecord: 0.1ms | Allocations: 11949)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:53:04 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 7647)
+
+
+  
+KeyError (:news_api is blank):
+  
+app/interactors/news_api_helper.rb:18:in `init_api'
+app/interactors/news_api_helper.rb:11:in `call'
+app/controllers/page_controller.rb:7:in `home'
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:53:25 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PageController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.2ms | Allocations: 141)
+  Rendered page/home.html.erb within layouts/application (Duration: 379.2ms | Allocations: 8422)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1488ms (Views: 516.1ms | ActiveRecord: 0.7ms | Allocations: 36338)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-13 20:53:57 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PageController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/page_controller.rb:15:in `user_pref'
+  Rendering page/home.html.erb within layouts/application
+  Rendered layouts/_devise_notifications.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered page/home.html.erb within layouts/application (Duration: 312.3ms | Allocations: 4406)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1079ms (Views: 318.1ms | ActiveRecord: 0.7ms | Allocations: 17963)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Destroy (121.0ms)[0m  [1m[31mDELETE FROM "users"[0m

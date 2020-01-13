@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 require 'news-api'
 
 class NewsApiHelper
   include Interactor
-
-  API_KEY = "ab58366680454fb0b5600af0a6f9f564"
 
   def call
     init_api
     context.res = get_headers(context.country, context.category)
   end
 
-  private 
+  private
 
   def init_api
-    @api = News.new(API_KEY)
+    news_api_key = Rails.application.credentials.news_api!
+    @api = News.new(news_api_key)
   end
 
   def get_headers(country, category)

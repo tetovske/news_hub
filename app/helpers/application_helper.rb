@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def user_preferences
     [
@@ -7,7 +9,7 @@ module ApplicationHelper
       [t('account_page.news_type.general'), 'general'],
       [t('account_page.news_type.science'), 'science'],
       [t('account_page.news_type.sports'), 'sports'],
-      [t('account_page.news_type.technology'), 'technology'],
+      [t('account_page.news_type.technology'), 'technology']
     ]
   end
 end
